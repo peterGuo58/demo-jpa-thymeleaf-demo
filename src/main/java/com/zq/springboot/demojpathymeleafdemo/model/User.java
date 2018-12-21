@@ -71,4 +71,6 @@ public class User {
                 ", regTime=" + regTime +
                 '}';
     }
+
+
 }
