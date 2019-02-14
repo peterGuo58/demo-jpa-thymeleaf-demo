@@ -8,6 +8,11 @@
 <body class="container">
 <br/>
 <h1>用户列表</h1>
+<div class="form-group">
+    <div class="col-sm-2 control-label">
+        <a href="/toAdd" th:href="@{/toAdd}" class="btn btn-info">add</a>
+    </div>
+</div>
 <br/><br/>
 <div class="with:80%">
     <table class="table table-hover">
@@ -34,13 +39,10 @@
         </tr>
         </tbody>
     </table>
-    <div th:include="page :: pager" th:remove="tag"></div>
+    <!--这里的include的作用是布局分页，在页面的最下面添加分页的显示信息，包括page这个文件下的fragement的名叫pager的信息加载进来-->
+    <div th:include="page :: pager" th:remove="tag"></div><!--注意：第一个page为文件名，第二个pager为th:fragment的值。这样便可以解决公共部分代码的抽取。-->
 </div>
-<div class="form-group">
-    <div class="col-sm-2 control-label">
-        <a href="/toAdd" th:href="@{/toAdd}" class="btn btn-info">add</a>
-    </div>
-</div>
+
 
 </body>
 </html>

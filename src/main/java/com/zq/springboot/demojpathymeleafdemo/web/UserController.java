@@ -36,7 +36,7 @@ public class UserController {
     */
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     public String list(Model model, @RequestParam(value = "page", defaultValue = "0") Integer page,
-                       @RequestParam(value = "size", defaultValue = "6") Integer size) {
+                       @RequestParam(value = "size", defaultValue = "20") Integer size) {
         Sort sort = new Sort(Sort.Direction.DESC, "id");
         Pageable pageable = PageRequest.of(page, size, sort);
         Page<User> users = userRepository.findList(pageable);
